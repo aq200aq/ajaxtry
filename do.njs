@@ -1,12 +1,11 @@
 #!/usr/local/bin/node
-/* the above line (must be the first line) enables apache to execute this program */
 
-/* parse query to object */
+var fs = require('fs');
 var querystring = require('querystring');
 var param = querystring.parse(process.env.QUERY_STRING);
+var file = fs.readFileSync('name.json','utf-8');
+var data = JSON.parse(file);
 
-/* return header to browser */
-console.log("Content-type: text/html; charset='utf-8'\n")
+console.log("Content-type: text/html; charset='utf-8'\n");
 
-/* return normal HTML content */
-console.log(('<h1>Hello, ' + param.fname + ' ' + param.lname + '</h1>'); 
+console.log('<h1>Hello ' + data[param.number] + '!</h1>'); 
