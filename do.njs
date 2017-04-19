@@ -8,4 +8,4 @@ var data = JSON.parse(file);
 
 console.log("Content-type: text/html; charset='utf-8'\n");
 
-console.log('<h1>Hello ' + data[param.number] + '!</h1>'); 
+console.log('<h1>Hello ' + data[param.key] + '!</h1>'); 
