@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var querystring = require('querystring');
-var param = querystring.parse(process.env.QUERY_STRING);
+var param = querystring.parse(fs.readFileSync('/dev/stdin', 'utf-8'));
 var file = fs.readFileSync('name.json','utf-8');
 var data = JSON.parse(file);
 
